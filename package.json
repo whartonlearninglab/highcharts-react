@@ -21,7 +21,7 @@
   },
   "peerDepedencies": {
     "highcharts": ">=5.0.0",
-    "react": ">=16.0"
+    "react": ">=15.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
