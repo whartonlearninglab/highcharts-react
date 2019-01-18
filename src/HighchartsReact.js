@@ -3,7 +3,7 @@ import React from "react";
 export default class HighchartsReact extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.container = React.createRef();
+    this.container = React.createRef(); // only available in React 16.3 or higher
   }
 
   componentDidMount() {

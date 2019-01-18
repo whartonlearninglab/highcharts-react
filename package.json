@@ -1,5 +1,5 @@
 {
-  "name": "highcharts-react-official",
+  "name": "highcharts-react-15",
   "version": "2.0.0",
   "main": "./dist/highcharts-react.min.js",
   "license": "SEE LICENSE IN <LICENSE>",
