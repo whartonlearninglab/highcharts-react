@@ -1,41 +1,41 @@
-import React from "react";
+import React from 'react'
 
 export default class HighchartsReact extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.container = React.createRef();
+  constructor (props) {
+    super(props)
+    this.container = { current: null, } // createRef() is only available in React 16.3 or higher
   }
 
-  componentDidMount() {
-    const props = this.props;
-    const highcharts = props.highcharts || window.Highcharts;
+  componentDidMount () {
+    const props = this.props
+    const highcharts = props.highcharts || window.Highcharts
     // Create chart
-    this.chart = highcharts[props.constructorType || "chart"](
+    this.chart = highcharts[props.constructorType || 'chart'](
       this.container.current,
       props.options,
       props.callback ? props.callback : undefined
-    );
+    )
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     if (this.props.allowChartUpdate !== false) {
       this.chart.update(
         this.props.options,
         ...(this.props.updateArgs || [true, true])
-      );
+      )
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     // Destroy chart
     if (this.chart) {
-      this.chart.destroy();
-      this.chart = null;
+      this.chart.destroy()
+      this.chart = null
     }
   }
 
-  render() {
+  render () {
     // Create container for the chart
-    return React.createElement("div", { ref: this.container });
+    return React.createElement('div', { ref: this.container })
   }
 }
