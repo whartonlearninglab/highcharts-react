@@ -3,7 +3,7 @@ import React from "react";
 export default class HighchartsReact extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.container = { current: null, }; // createRef() is only available in React 16.3 or higher
+
   }
 
   componentDidMount() {
@@ -11,7 +11,7 @@ export default class HighchartsReact extends React.PureComponent {
     const highcharts = props.highcharts || window.Highcharts;
     // Create chart
     this.chart = highcharts[props.constructorType || "chart"](
-      this.container.current,
+      this.container,
       props.options,
       props.callback ? props.callback : undefined
     );
@@ -36,6 +36,9 @@ export default class HighchartsReact extends React.PureComponent {
 
   render() {
     // Create container for the chart
-    return React.createElement("div", { ref: this.container });
+
+    return (
+      <div ref={(div) => { this.container = div }} />
+    )
   }
 }
