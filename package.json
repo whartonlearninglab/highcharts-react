@@ -1,11 +1,11 @@
 {
   "name": "highcharts-react-15",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "./dist/highcharts-react.min.js",
   "license": "SEE LICENSE IN <LICENSE>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/highcharts/highcharts-react"
+    "url": "git+https://github.com/whartonlearninglab/highcharts-react"
   },
   "keywords": [
     "highcharts",
